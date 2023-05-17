@@ -1,21 +1,16 @@
-// interesting jquery import thanks to babel
-import $ from 'jquery';
-// import lodash
-import _ from 'lodash';
+import $ from "jquery";
+import _ from "lodash";
 
-// append elements
-$('body').append(`<p>Holberton Dashboard</p>`);
-$('body').append(`<p>Dashboard data for the students</p>`);
-$('body').append(`<button>Click here to get started</button>`);
-$('body').append(`<p id="count"></p>`);
-$('body').append(`<p>Copyright - Holberton School</p>`);
+$('<p>Holberton Dashboard</p>').appendTo("body");
+$('<p>Dashboard data for the students</p>').appendTo("body");
+$('<button>Click here to get started</button>').appendTo("body");
+$("<p id='count'></p>").appendTo("body");
+$('<p>Copyright - Holberton School</p>').appendTo("body");
 
-// bind lodash's debounce to the button
-$('button').on('click', _.debounce(updateCounter, 500));
+$('button').on('click', _.debounce(updateCounter, 500)); // ["500"]
 
-let count  = 0;
-// function to update the counter
+let count = 0;
 function updateCounter() {
-	count++;
-	$('#count').text(`${count} clicks on the button`);
+    count += 1;
+    $('#count').html(`${count} clicks on the button`);
 }
